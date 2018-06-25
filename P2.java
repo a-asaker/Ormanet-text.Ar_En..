@@ -22,7 +22,7 @@ import sun.misc.Resource;
 
 /**
  *
- * @author A-M
+ * @author a-asaker
  */
 public class P2{
 
