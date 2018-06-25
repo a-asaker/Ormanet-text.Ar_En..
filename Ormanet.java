@@ -15,9 +15,9 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import java.awt.datatransfer.StringSelection;
 
-public class Ormanet extends javax.swing.JFrame {
+public class Ornament extends javax.swing.JFrame {
 
-    public Ormanet() {
+    public Ornament() {
         initComponents();
     }
 
