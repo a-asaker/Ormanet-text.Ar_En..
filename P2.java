@@ -38,9 +38,9 @@ public class P2{
         } catch (ParseException ex) {
             Logger.getLogger(P2.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-            Ormanet form = new Ormanet(); 
+            Ornament form = new Ornament(); 
            form.setVisible(true);
-           ImageIcon img = new ImageIcon("C:/Users/A-M/Desktop/iaco.png");
+           ImageIcon img = new ImageIcon("iaco.jpg");
          form.setIconImage(img.getImage());
        }
     
