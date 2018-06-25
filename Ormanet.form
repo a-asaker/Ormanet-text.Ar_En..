@@ -1854,7 +1854,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Coded By ( Java 3 ) Group"/>
+                <Property name="text" type="java.lang.String" value="Coded By a-asaker"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
