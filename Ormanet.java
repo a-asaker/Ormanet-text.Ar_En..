@@ -1169,7 +1169,7 @@ public class Ormanet extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Coded By ( Java 3 ) Group");
+        jLabel7.setText("Coded By a-asaker");
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 0, 36)); // NOI18N
