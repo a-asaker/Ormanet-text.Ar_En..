@@ -1,7 +1,6 @@
-package p2;
+package ornament;
 
 import java.awt.Color;
-import java.awt.ComponentOrientation;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -13,6 +12,8 @@ import java.io.FileWriter;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 
 public class Ornament extends javax.swing.JFrame {
@@ -107,15 +108,15 @@ public class Ornament extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ornament Text");
-        setAutoRequestFocus(false);
-        setBounds(new java.awt.Rectangle(400, 30, 0, 0));
+        setBounds(new java.awt.Rectangle(300, 35, 0, 0));
+        setFocusTraversalPolicyProvider(true);
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setUndecorated(true);
         setOpacity(0.8F);
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
 
-        jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
-        jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 255, 255), new java.awt.Color(255, 255, 0)));
-        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setBackground(new java.awt.Color(255, 0, 0));
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane1.setOpaque(true);
@@ -136,7 +137,6 @@ public class Ornament extends javax.swing.JFrame {
         jTextArea4.setColumns(20);
         jTextArea4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jTextArea4.setRows(5);
-        jTextArea4.setFocusCycleRoot(true);
         jScrollPane4.setViewportView(jTextArea4);
 
         bs.setFont(new java.awt.Font("Lucida Calligraphy", 3, 18)); // NOI18N
@@ -285,9 +285,12 @@ public class Ornament extends javax.swing.JFrame {
             jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(fifthe, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
             .addComponent(fourthe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Firste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addComponent(thirde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Seconde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Firste, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jLayeredPane4Layout.setVerticalGroup(
             jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +313,7 @@ public class Ornament extends javax.swing.JFrame {
         jLayeredPane4.setLayer(fifthe, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLayeredPane1.add(jLayeredPane4);
-        jLayeredPane4.setBounds(530, 10, 170, 330);
+        jLayeredPane4.setBounds(550, 10, 170, 330);
         jLayeredPane4.getAccessibleContext().setAccessibleName("Choose");
 
         opene.setBackground(new java.awt.Color(255, 255, 255));
@@ -438,7 +441,7 @@ public class Ornament extends javax.swing.JFrame {
         );
 
         jLayeredPane1.add(jPanel2);
-        jPanel2.setBounds(530, 350, 170, 210);
+        jPanel2.setBounds(550, 350, 170, 210);
 
         exite.setBackground(new java.awt.Color(255, 255, 255));
         exite.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
@@ -453,372 +456,13 @@ public class Ornament extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(exite);
-        exite.setBounds(530, 560, 170, 100);
+        exite.setBounds(550, 560, 170, 100);
 
         jTabbedPane1.addTab("English", jLayeredPane1);
 
         jLayeredPane5.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane5.setOpaque(true);
-
-        jLayeredPane6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "زخرفة", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
-
-        jTextArea7.setColumns(20);
-        jTextArea7.setFont(new java.awt.Font("Arial Unicode MS", 0, 24)); // NOI18N
-        jTextArea7.setRows(5);
-        jTextArea7.setName("aintxt"); // NOI18N
-        jScrollPane7.setViewportView(jTextArea7);
-
-        jTextArea8.setEditable(false);
-        jTextArea8.setColumns(20);
-        jTextArea8.setFont(new java.awt.Font("Arial Unicode MS", 0, 24)); // NOI18N
-        jTextArea8.setRows(5);
-        jScrollPane8.setViewportView(jTextArea8);
-
-        bsa.setFont(new java.awt.Font("Microsoft Sans Serif", 3, 18)); // NOI18N
-        bsa.setText("مسح");
-        bsa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bsa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bsaActionPerformed(evt);
-            }
-        });
-
-        pastea.setFont(new java.awt.Font("Microsoft Sans Serif", 3, 18)); // NOI18N
-        pastea.setText("لصق");
-        pastea.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pastea.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pasteaActionPerformed(evt);
-            }
-        });
-
-        cleara.setFont(new java.awt.Font("Microsoft Sans Serif", 3, 18)); // NOI18N
-        cleara.setText("حذف");
-        cleara.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cleara.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearaActionPerformed(evt);
-            }
-        });
-
-        copya.setFont(new java.awt.Font("Microsoft Sans Serif", 3, 18)); // NOI18N
-        copya.setText("نسخ");
-        copya.setToolTipText("");
-        copya.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        copya.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                copyaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jLayeredPane6Layout = new javax.swing.GroupLayout(jLayeredPane6);
-        jLayeredPane6.setLayout(jLayeredPane6Layout);
-        jLayeredPane6Layout.setHorizontalGroup(
-            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                .addComponent(bsa, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pastea, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
-            .addComponent(jScrollPane8)
-            .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                .addComponent(cleara, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(copya, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jLayeredPane6Layout.setVerticalGroup(
-            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bsa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pastea, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cleara, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(copya, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jLayeredPane6.setLayer(jScrollPane7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(jScrollPane8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(bsa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(pastea, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(cleara, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane6.setLayer(copya, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        jLayeredPane10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "عربى", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
-        jLayeredPane10.setPreferredSize(new java.awt.Dimension(170, 330));
-
-        firstaa.setBackground(new java.awt.Color(255, 255, 255));
-        firstaa.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        firstaa.setText("ٱﻟٱ̲ﯙﻟ̲ـ");
-        firstaa.setBorder(null);
-        firstaa.setContentAreaFilled(false);
-        firstaa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        firstaa.setOpaque(true);
-        firstaa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstaaActionPerformed(evt);
-            }
-        });
-
-        secondaa.setBackground(new java.awt.Color(255, 255, 255));
-        secondaa.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        secondaa.setText("ٵڸٽٵڼۓ");
-        secondaa.setBorder(null);
-        secondaa.setContentAreaFilled(false);
-        secondaa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        secondaa.setOpaque(true);
-        secondaa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                secondaaActionPerformed(evt);
-            }
-        });
-
-        thirdaa.setBackground(new java.awt.Color(255, 255, 255));
-        thirdaa.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        thirdaa.setText("ٵ ﻟ̶̭͠ ٽٵ ﻟ̶ ٽ ̭͠");
-        thirdaa.setBorder(null);
-        thirdaa.setContentAreaFilled(false);
-        thirdaa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        thirdaa.setOpaque(true);
-        thirdaa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                thirdaaActionPerformed(evt);
-            }
-        });
-
-        fourthaa.setBackground(new java.awt.Color(255, 255, 255));
-        fourthaa.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        fourthaa.setText("ٱٍڸٍږٱٍﮨـًّﻋً̲ﮱ   ");
-        fourthaa.setBorder(null);
-        fourthaa.setContentAreaFilled(false);
-        fourthaa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fourthaa.setOpaque(true);
-        fourthaa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fourthaaActionPerformed(evt);
-            }
-        });
-
-        fifthaa.setBackground(new java.awt.Color(255, 255, 255));
-        fifthaa.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        fifthaa.setText("ٱـڵےڂےٱمےـﺳ̭͠ـے");
-        fifthaa.setBorder(null);
-        fifthaa.setContentAreaFilled(false);
-        fifthaa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fifthaa.setOpaque(true);
-        fifthaa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fifthaaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jLayeredPane10Layout = new javax.swing.GroupLayout(jLayeredPane10);
-        jLayeredPane10.setLayout(jLayeredPane10Layout);
-        jLayeredPane10Layout.setHorizontalGroup(
-            jLayeredPane10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(firstaa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(secondaa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(fifthaa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(fourthaa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(thirdaa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jLayeredPane10Layout.setVerticalGroup(
-            jLayeredPane10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane10Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(firstaa, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(secondaa, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(thirdaa, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fourthaa, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fifthaa, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jLayeredPane10.setLayer(firstaa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane10.setLayer(secondaa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane10.setLayer(thirdaa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane10.setLayer(fourthaa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane10.setLayer(fifthaa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        atxt.setBackground(new java.awt.Color(255, 255, 255));
-        atxt.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        atxt.setText("لون الخط");
-        atxt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 255), 1, true));
-        atxt.setContentAreaFilled(false);
-        atxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        atxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atxtActionPerformed(evt);
-            }
-        });
-
-        abtxt.setBackground(new java.awt.Color(255, 255, 255));
-        abtxt.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        abtxt.setText("لون خلفية الخط");
-        abtxt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 255), 1, true));
-        abtxt.setContentAreaFilled(false);
-        abtxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        abtxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abtxtActionPerformed(evt);
-            }
-        });
-
-        aback.setBackground(new java.awt.Color(255, 255, 255));
-        aback.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        aback.setText("لون خلفية النموذج");
-        aback.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 255), 1, true));
-        aback.setContentAreaFilled(false);
-        aback.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        aback.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abackActionPerformed(evt);
-            }
-        });
-
-        aopen.setBackground(new java.awt.Color(0, 0, 0));
-        aopen.setFont(new java.awt.Font("Sakkal Majalla", 0, 24)); // NOI18N
-        aopen.setText("فتح");
-        aopen.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
-        aopen.setContentAreaFilled(false);
-        aopen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        aopen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aopenActionPerformed(evt);
-            }
-        });
-
-        asave.setBackground(new java.awt.Color(0, 0, 0));
-        asave.setFont(new java.awt.Font("Sakkal Majalla", 0, 24)); // NOI18N
-        asave.setText("حفظ");
-        asave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
-        asave.setContentAreaFilled(false);
-        asave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        asave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                asaveActionPerformed(evt);
-            }
-        });
-
-        jSlider2.setBackground(new java.awt.Color(255, 255, 255));
-        jSlider2.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jSlider2.setForeground(new java.awt.Color(255, 255, 255));
-        jSlider2.setMajorTickSpacing(10);
-        jSlider2.setPaintLabels(true);
-        jSlider2.setPaintTicks(true);
-        jSlider2.setSnapToTicks(true);
-        jSlider2.setFocusCycleRoot(true);
-        jSlider2.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-                jSlider2AncestorMoved(evt);
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jSlider2.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSlider2StateChanged(evt);
-            }
-        });
-        jSlider2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jSlider2MouseReleased(evt);
-            }
-        });
-
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("درجة الشفافية");
-
-        aexit.setBackground(new java.awt.Color(0, 0, 0));
-        aexit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        aexit.setText("إغلاق");
-        aexit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 0, 0), 1, true));
-        aexit.setContentAreaFilled(false);
-        aexit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        aexit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aexitActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
-        jLayeredPane5.setLayout(jLayeredPane5Layout);
-        jLayeredPane5Layout.setHorizontalGroup(
-            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                        .addComponent(asave, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                                .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(aopen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLayeredPane10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(aback, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(atxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(abtxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(aexit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jLayeredPane5Layout.setVerticalGroup(
-            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                        .addComponent(jLayeredPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                                .addComponent(jSlider2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(aopen)
-                            .addComponent(asave)))
-                    .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                        .addComponent(jLayeredPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(atxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(abtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(aback, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(aexit, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jLayeredPane5.setLayer(jLayeredPane6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLayeredPane10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(atxt, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(abtxt, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(aback, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(aopen, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(asave, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jSlider2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(aexit, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        jTabbedPane1.addTab("عربى", jLayeredPane5);
-
+        
         jLayeredPane2.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane2.setOpaque(true);
 
@@ -826,11 +470,7 @@ public class Ornament extends javax.swing.JFrame {
 
         jTextArea5.setColumns(20);
         jTextArea5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jTextArea5.setLineWrap(true);
         jTextArea5.setRows(5);
-        jTextArea5.setWrapStyleWord(true);
-        jTextArea5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextArea5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jTextArea5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextArea5KeyPressed(evt);
@@ -889,7 +529,7 @@ public class Ornament extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(copy1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
+            .addComponent(jScrollPane6)
             .addGroup(jLayeredPane7Layout.createSequentialGroup()
                 .addComponent(deleta, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -923,8 +563,9 @@ public class Ornament extends javax.swing.JFrame {
 
         jLayeredPane8.setBackground(new java.awt.Color(0, 51, 255));
         jLayeredPane8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "عربى", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
+	jLayeredPane8.setPreferredSize(new java.awt.Dimension(170, 330));
 
-        Firsta1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Firsta1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Firsta1.setText("ٱﻟٱ̲ﯙﻟ̲ـ");
         Firsta1.setBorder(null);
         Firsta1.setBorderPainted(false);
@@ -936,7 +577,7 @@ public class Ornament extends javax.swing.JFrame {
             }
         });
 
-        Seconda.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Seconda.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         Seconda.setText("ٵڸٽٵڼۓ");
         Seconda.setBorder(null);
         Seconda.setBorderPainted(false);
@@ -948,7 +589,7 @@ public class Ornament extends javax.swing.JFrame {
             }
         });
 
-        thirda.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        thirda.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         thirda.setText("ٵ ﻟ̶̭͠ ٽٵ ﻟ̶ ٽ ̭͠");
         thirda.setBorder(null);
         thirda.setBorderPainted(false);
@@ -960,7 +601,7 @@ public class Ornament extends javax.swing.JFrame {
             }
         });
 
-        fourtha.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        fourtha.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         fourtha.setText("ٱٍڸٍږٱٍﮨـًّﻋً̲ﮱ");
         fourtha.setBorder(null);
         fourtha.setBorderPainted(false);
@@ -972,7 +613,7 @@ public class Ornament extends javax.swing.JFrame {
             }
         });
 
-        fiftha.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        fiftha.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         fiftha.setText("ٱـڵےڂےٱمےـﺳ̭͠ـے");
         fiftha.setBorder(null);
         fiftha.setBorderPainted(false);
@@ -988,7 +629,7 @@ public class Ornament extends javax.swing.JFrame {
         jLayeredPane8.setLayout(jLayeredPane8Layout);
         jLayeredPane8Layout.setHorizontalGroup(
             jLayeredPane8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fiftha, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+            .addComponent(fiftha, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
             .addComponent(fourtha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane8Layout.createSequentialGroup()
                 .addContainerGap()
@@ -1018,7 +659,7 @@ public class Ornament extends javax.swing.JFrame {
         jLayeredPane8.setLayer(fiftha, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLayeredPane2.add(jLayeredPane8);
-        jLayeredPane8.setBounds(530, 10, 170, 330);
+        jLayeredPane8.setBounds(550, 10, 170, 330);
 
         opena.setBackground(new java.awt.Color(255, 255, 255));
         opena.setFont(new java.awt.Font("Sakkal Majalla", 0, 24)); // NOI18N
@@ -1090,9 +731,9 @@ public class Ornament extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         aback1.setBackground(new java.awt.Color(255, 255, 255));
-        aback1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        aback1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         aback1.setText("لون خلفية البرنامج");
-        aback1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 1, true));
+        aback1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 255), 1, true));
         aback1.setContentAreaFilled(false);
         aback1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         aback1.addActionListener(new java.awt.event.ActionListener() {
@@ -1102,9 +743,9 @@ public class Ornament extends javax.swing.JFrame {
         });
 
         abtxt1.setBackground(new java.awt.Color(255, 255, 255));
-        abtxt1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        abtxt1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         abtxt1.setText("لون خلفية النص");
-        abtxt1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 1, true));
+        abtxt1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 255), 1, true));
         abtxt1.setContentAreaFilled(false);
         abtxt1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         abtxt1.addActionListener(new java.awt.event.ActionListener() {
@@ -1114,9 +755,9 @@ public class Ornament extends javax.swing.JFrame {
         });
 
         atxt1.setBackground(new java.awt.Color(255, 255, 255));
-        atxt1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        atxt1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         atxt1.setText("لون النص");
-        atxt1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 1, true));
+        atxt1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 255), 1, true));
         atxt1.setContentAreaFilled(false);
         atxt1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         atxt1.addActionListener(new java.awt.event.ActionListener() {
@@ -1145,7 +786,7 @@ public class Ornament extends javax.swing.JFrame {
         );
 
         jLayeredPane2.add(jPanel3);
-        jPanel3.setBounds(530, 350, 170, 210);
+        jPanel3.setBounds(550, 350, 170, 210);
 
         exite1.setBackground(new java.awt.Color(255, 255, 255));
         exite1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
@@ -1160,7 +801,7 @@ public class Ornament extends javax.swing.JFrame {
             }
         });
         jLayeredPane2.add(exite1);
-        exite1.setBounds(530, 560, 170, 100);
+        exite1.setBounds(550, 560, 170, 100);
 
         jTabbedPane1.addTab("عربى", jLayeredPane2);
 
@@ -1169,13 +810,13 @@ public class Ornament extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Coded By a-asaker");
+        jLabel7.setText("Coded By :: A_Asaker");
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Instructor : Ahmed Hermas :D");
+        jLabel8.setText("Instructor : Ahmed Hermas");
 
         jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -1191,7 +832,7 @@ public class Ornament extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -1203,7 +844,7 @@ public class Ornament extends javax.swing.JFrame {
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("About", jPanel1);
@@ -1961,9 +1602,9 @@ public class Ornament extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextArea3KeyPressed
 
     private void jTextArea5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea5KeyPressed
-jTextArea5.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-jTextArea6.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea5KeyPressed
+
     private void deletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletaActionPerformed
   jTextArea5.setText("");        // TODO add your handling code here:
     }//GEN-LAST:event_deletaActionPerformed
@@ -2282,49 +1923,43 @@ colorfr1();             // TODO add your handling code here:
 System.exit(0);         // TODO add your handling code here:
     }//GEN-LAST:event_exite1ActionPerformed
 public void colort (){
-    Color newColor = JColorChooser.showDialog(jTextArea5, "Choose a color",Color.white);
+    Color newColor = JColorChooser.showDialog(null, "Choose a color",Color.black);
     jTextArea5.setBackground(newColor);
     jTextArea6.setBackground(newColor);
 }
 public void colorfr (){
-    Color newColor = JColorChooser.showDialog(jPanel2, "Choose a color",Color.white);
+    Color newColor = JColorChooser.showDialog(null, "Choose a color",Color.black);
     jLayeredPane1.setBackground(newColor);
-    jPanel2.setBackground(newColor); 
-    jSlider1.setBackground(newColor);
     }
 public void colorfn (){
-    Color newColor = JColorChooser.showDialog(jTextArea3, "Choose a color",Color.BLACK);
+    Color newColor = JColorChooser.showDialog(null, "Choose a color",Color.black);
     jTextArea3.setForeground(newColor);
     jTextArea4.setForeground(newColor);
-      
-}
+    }
 public void colort1 (){
-    Color newColor = JColorChooser.showDialog(jTextArea5, "Choose a color",Color.white);
+    Color newColor = JColorChooser.showDialog(null, "Choose a color",Color.black);
     jTextArea5.setBackground(newColor);
     jTextArea6.setBackground(newColor);
 }
 public void colorfr1 (){
-    Color newColor = JColorChooser.showDialog(jPanel3, "Choose a color",Color.white);
+    Color newColor = JColorChooser.showDialog(null, "Choose a color",Color.black);
     jLayeredPane2.setBackground(newColor);
-    jPanel3.setBackground(newColor);
-    jSlider3.setBackground(newColor);
     }
 public void colorfn1 (){
-    Color newColor = JColorChooser.showDialog(jTextArea5, "Choose a color",Color.black);
+    Color newColor = JColorChooser.showDialog(null, "Choose a color",Color.black);
     jTextArea5.setForeground(newColor);
     jTextArea6.setForeground(newColor);
-    
     }
 public void font(){
-    Font font= new Font("Arial", 0, 24);
+    Font font= new Font("Arial", 0, 18);
        jTextArea4.setFont(font);
 }
 public void font1(){
-    Font font= new Font("Arial", 0, 24);
+    Font font= new Font("Arial", 0, 18);
        jTextArea6.setFont(font);
 }
 public void colortxt(){
-   Color newColor = JColorChooser.showDialog(jTextArea3, "Choose a color",Color.white);
+   Color newColor = JColorChooser.showDialog(null, "Choose a color",Color.black);
     jTextArea3.setBackground(newColor);
     jTextArea4.setBackground(newColor);
 }    
