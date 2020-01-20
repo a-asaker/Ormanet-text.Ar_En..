@@ -1,3 +1,4 @@
+// Coded By :: A_Asaker
 package ornament;
 
 import com.sun.webkit.graphics.GraphicsDecoder;
@@ -10,10 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-/**
- *
- * @author a-asaker
- */
 public class Main{
     public static void main(String[] args) {
             Ornament form = new Ornament(); 
